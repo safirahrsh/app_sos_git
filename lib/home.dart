@@ -57,13 +57,17 @@ class _HomeState extends State<Home> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(queryData.size.width*1/100,queryData.size.height*1/100,queryData.size.width*1/100,queryData.size.height*1/100),
+            padding: EdgeInsets.fromLTRB(
+                queryData.size.width * 1 / 100,
+                queryData.size.height * 1 / 100,
+                queryData.size.width * 1 / 100,
+                queryData.size.height * 1 / 100),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  width: queryData.size.width / 2.5,
-                  height: queryData.size.width / 3,
+                  width: queryData.size.width * 40 / 100,
+                  height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
@@ -82,8 +86,8 @@ class _HomeState extends State<Home> {
                       )),
                 ),
                 SizedBox(
-                  width: queryData.size.width / 2.5,
-                  height: queryData.size.width / 3,
+                  width: queryData.size.width * 40 / 100,
+                  height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
@@ -105,13 +109,17 @@ class _HomeState extends State<Home> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(queryData.size.width*1/100,queryData.size.height*1/100,queryData.size.width*1/100,queryData.size.height*1/100),
+            padding: EdgeInsets.fromLTRB(
+                queryData.size.width * 1 / 100,
+                queryData.size.height * 1 / 100,
+                queryData.size.width * 1 / 100,
+                queryData.size.height * 1 / 100),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  width: queryData.size.width / 2.5,
-                  height: queryData.size.width / 3,
+                  width: queryData.size.width * 40 / 100,
+                  height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
@@ -132,8 +140,8 @@ class _HomeState extends State<Home> {
                       )),
                 ),
                 SizedBox(
-                  width: queryData.size.width / 2.5,
-                  height: queryData.size.width / 3,
+                  width: queryData.size.width * 40 / 100,
+                  height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
