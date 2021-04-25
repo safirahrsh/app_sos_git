@@ -58,9 +58,9 @@ class _ContactsState extends State<Contacts> {
                 ),
               ),
             ),
-            Contact(
-              name: 'John Wack',
-              phoneNumber: '555-111-dead',
+            new Contact(
+              name: 'Tom Nook',
+              phoneNumber: '555-111-222',
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -74,9 +74,9 @@ class _ContactsState extends State<Contacts> {
                 ),
               ),
             ),
-            Contact(
+            new Contact(
               name: 'John Wack',
-              phoneNumber: '555-111-dead',
+              phoneNumber: '555-111-333',
             )
           ],
         ),

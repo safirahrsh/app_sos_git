@@ -38,7 +38,7 @@ class  Contact extends StatelessWidget {
                                 bottom: queryData.size.width * 1 / 100),
                             child: Text(
                               //temp data
-                              'Tom Nook',
+                              name,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -47,7 +47,7 @@ class  Contact extends StatelessWidget {
                                 top: queryData.size.width * 1 / 100,
                                 bottom: queryData.size.width * 1 / 100),
                             child: Text(
-                              '555-000-fuck you',
+                              phoneNumber,
                               style: TextStyle(color: Colors.grey),
                             ),
                           ),
