@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SOS',
+      title: 'SOS Application',
       home: AppNavBar(),
     );
   }
