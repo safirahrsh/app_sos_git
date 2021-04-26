@@ -144,79 +144,71 @@ class _FaqPageState extends State<FaqPage> {
                     fontSize: 15),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: queryData.size.height * 1 / 100,
-              ),
-              child: Card(
-                child: ExpansionTile(
-                  title: Text(
-                    'Question 1',
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  children: [
-                    Container(
-                      height: queryData.size.height * 8 / 100,
-                      child: Align(
-                        child: Text(
-                          'Answer 1',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        alignment: Alignment.center,
+            Expanded(
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  Card(
+                    child: ExpansionTile(
+                      title: Text(
+                        'Question 1',
+                        style: TextStyle(fontSize: 15),
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: queryData.size.height * 1 / 100,
-              ),
-              child: Card(
-                child: ExpansionTile(
-                  title: Text(
-                    'Question 2',
-                    style: TextStyle(fontSize: 15),
+                      children: [
+                        Container(
+                          height: queryData.size.height * 8 / 100,
+                          child: Align(
+                            child: Text(
+                              'Answer 1',
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            alignment: Alignment.center,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                  children: [
-                    Container(
-                      height: queryData.size.height * 8 / 100,
-                      child: Align(
-                        child: Text(
-                          'Answer 2',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        alignment: Alignment.center,
+                  Card(
+                    child: ExpansionTile(
+                      title: Text(
+                        'Question 2',
+                        style: TextStyle(fontSize: 15),
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                bottom: queryData.size.height * 1 / 100,
-              ),
-              child: Card(
-                child: ExpansionTile(
-                  title: Text(
-                    'Question 3',
-                    style: TextStyle(fontSize: 15),
+                      children: [
+                        Container(
+                          height: queryData.size.height * 8 / 100,
+                          child: Align(
+                            child: Text(
+                              'Answer 2',
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            alignment: Alignment.center,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                  children: [
-                    Container(
-                      height: queryData.size.height * 8 / 100,
-                      child: Align(
-                        child: Text(
-                          'Answer 3',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        alignment: Alignment.center,
+                  Card(
+                    child: ExpansionTile(
+                      title: Text(
+                        'Question 3',
+                        style: TextStyle(fontSize: 15),
                       ),
-                    )
-                  ],
-                ),
+                      children: [
+                        Container(
+                          height: queryData.size.height * 8 / 100,
+                          child: Align(
+                            child: Text(
+                              'Answer 3',
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            alignment: Alignment.center,
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
             )
           ],
