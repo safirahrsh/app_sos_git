@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sos_application/Contacts.dart';
-import 'home.dart';
-import 'FAQ.dart';
+import 'package:sos_application/home.dart';
+import 'package:sos_application/FAQ.dart';
+import 'package:sos_application/splashScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SOS',
-      home: AppNavBar(),
+      home: SplashScreen(),
     );
   }
 }
