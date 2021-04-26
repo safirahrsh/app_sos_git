@@ -11,15 +11,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
 
-  /*Automatically redirects to boarding within 5 secs*/
-  Future.delayed(Duration(seconds: 5), () {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
-  });
+    /*Automatically redirects to boarding within 5 secs*/
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
+    });
 
     return Scaffold(
       body: SafeArea(
@@ -47,8 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: ClipRRect(
                     child: Image.asset('assets/img/Icon.png'),
                     borderRadius: BorderRadius.circular(20),
-                    )
-                    ),
+                  )),
               Column(
                 children: [
                   Padding(
@@ -56,8 +55,11 @@ class _SplashScreenState extends State<SplashScreen> {
                       top: 20,
                       bottom: 20,
                     ),
-                    child: Text("SOS",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),),
+                    child: Text(
+                      "SOS",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 28.0),
+                    ),
                   ),
                   Text("Send emergency messages in one click"),
                 ],
