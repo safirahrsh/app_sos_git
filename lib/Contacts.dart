@@ -31,7 +31,71 @@ class _ContactsState extends State<Contacts> {
             SizedBox(
               width: queryData.size.width * 70 / 100,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                      backgroundColor: Colors.transparent,
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          height: queryData.size.height * 25 / 100,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    bottom: queryData.size.height * 2 / 100),
+                                child: SizedBox(
+                                  height: queryData.size.height * 8 / 100,
+                                  width: queryData.size.width * 95 / 100,
+                                  child: TextButton(
+                                    child: Text(
+                                      'Import from contacts',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.white),
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                        ))),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    bottom: queryData.size.height * 2 / 100),
+                                child: SizedBox(
+                                  height: queryData.size.height * 8 / 100,
+                                  width: queryData.size.width * 95 / 100,
+                                  child: TextButton(
+                                    child: Text(
+                                      'Add contacts manually',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                    style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.white),
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                        ))),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      });
+                },
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.red),
