@@ -30,10 +30,12 @@ class _HomeState extends State<Home> {
           SizedBox(
             width: queryData.size.width * 50 / 100,
             height: queryData.size.height * 25 / 100,
-            child: FlatButton(
+            child: TextButton(
               onPressed: () {},
-              color: Colors.red,
-              shape: CircleBorder(),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  shape:
+                      MaterialStateProperty.all<CircleBorder>(CircleBorder())),
               child: Text(
                 'SOS',
                 style: TextStyle(
