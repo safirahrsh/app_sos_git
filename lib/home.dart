@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
         children: [
           Center(
             child: Container(
-              height: queryData.size.width / 10,
+              height: queryData.size.width * 10 / 100,
               //color: Colors.grey,
               child: Text(
                 'Send SOS Messages',
@@ -28,8 +28,8 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(
-            width: queryData.size.width / 2,
-            height: queryData.size.width / 2,
+            width: queryData.size.width * 50 / 100,
+            height: queryData.size.width * 50 / 100,
             child: FlatButton(
               onPressed: () {},
               color: Colors.red,
@@ -46,12 +46,15 @@ class _HomeState extends State<Home> {
           ),
           Center(
             child: Container(
-              height: queryData.size.width / 10,
-              child: Text(
-                'Emergency Call',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+              height: queryData.size.height * 10 / 100,
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Emergency Call',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
