@@ -9,7 +9,7 @@ class DummyFirstInitScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
 
-  /*Automatically redirects to homepage within 5 secs*/
+  /*Automatically navigates to homepage within 5 secs*/
   Future.delayed(Duration(seconds: 5), () {
     Navigator.push(context, MaterialPageRoute(builder: (context) => AppNavBar()));
   });

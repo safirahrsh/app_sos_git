@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'OnBoarding.dart';
+import 'package:sos_application/main.dart';
 
 class RegisterNumber extends StatefulWidget {
   @override
@@ -96,7 +96,10 @@ class _RegisterNumberState extends State<RegisterNumber> {
                 height: queryData.size.height * 8 / 100,
                 width: queryData.size.width * 65 / 100,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //Navigates to Home screen. Point of no return.
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AppNavBar()));
+                  },
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.red),

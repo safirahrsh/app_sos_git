@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:sos_application/dummyFirstInitScreen.dart';
 import 'registerScreen.dart';
 
-/*https://medium.com/aubergine-solutions/create-an-onboarding-page-indicator-in-3-minutes-in-flutter-a2bd97ceeaff*/
+//OnBoarding ONLY appears for the first time. Otherwise splashScreen navigates to home screen.
 
 class OnBoardingScreen extends StatefulWidget {
   OnBoardingScreen({Key key}) : super(key: key);
@@ -74,6 +73,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     borderRadius: BorderRadius.circular(16.0),
                   ))),
               onPressed: () {
+                //Setup Number button will navigate to register number screen
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RegisterNumber()));
               },

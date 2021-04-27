@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sos_application/OnBoarding.dart';
 import 'dart:async';
-// import 'package:sos_application/home.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -14,8 +13,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
-
-    /*Automatically redirects to boarding within 5 secs*/
+    
+    //Automatically navigates to boarding screen within 5 secs. Point of no return.
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
