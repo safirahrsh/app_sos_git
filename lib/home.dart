@@ -77,14 +77,28 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset("assets/img/icon_polri.png", height: 28),
-                          Text(
-                            'Polisi',
-                            style: TextStyle(color: Colors.red),
+                          Row(
+                            children: [
+                              Text(
+                                'Polisi',
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
                           ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Image.asset("assets/img/icon_polri.png",
+                                    height: 28)
+                              ]),
                         ],
                       ),
                       style: ButtonStyle(
@@ -104,14 +118,29 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          FaIcon(FontAwesomeIcons.ambulance, color: Colors.red),
-                          Text(
-                            'Ambulans',
-                            style: TextStyle(color: Colors.red),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ambulans',
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
                           ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                FaIcon(FontAwesomeIcons.ambulance,
+                                    color: Colors.red)
+                              ]),
                         ],
                       ),
                       style: ButtonStyle(
@@ -143,16 +172,30 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          FaIcon(FontAwesomeIcons.fireExtinguisher,
-                              color: Colors.red),
-                          Text(
-                            'Damkar',
-                            style: TextStyle(
-                              color: Colors.red,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                'Damkar',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              FaIcon(FontAwesomeIcons.fireExtinguisher,
+                                  color: Colors.red),
+                            ],
                           ),
                         ],
                       ),
@@ -173,15 +216,27 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {},
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          FaIcon(FontAwesomeIcons.userCheck, color: Colors.red),
-                          Text(
-                            'Emergency Contact',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.red),
+                          Row(
+                            children: [
+                              Text(
+                                'Emergency\nContact',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              FaIcon(FontAwesomeIcons.userCheck, color: Colors.red)]),
                         ],
                       ),
                       style: ButtonStyle(
