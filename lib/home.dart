@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -75,9 +76,16 @@ class _HomeState extends State<Home> {
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        'Polisi',
-                        style: TextStyle(color: Colors.red),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/img/icon_polri.png", height: 28),
+                          Text(
+                            'Polisi',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -95,9 +103,16 @@ class _HomeState extends State<Home> {
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        'Ambulans',
-                        style: TextStyle(color: Colors.red),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          FaIcon(FontAwesomeIcons.ambulance, color: Colors.red),
+                          Text(
+                            'Ambulans',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -127,11 +142,19 @@ class _HomeState extends State<Home> {
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        'Damkar',
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          FaIcon(FontAwesomeIcons.fireExtinguisher,
+                              color: Colors.red),
+                          Text(
+                            'Damkar',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -149,9 +172,17 @@ class _HomeState extends State<Home> {
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        'Emergency Contact',
-                        style: TextStyle(color: Colors.red),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          FaIcon(FontAwesomeIcons.userCheck, color: Colors.red),
+                          Text(
+                            'Emergency Contact',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
