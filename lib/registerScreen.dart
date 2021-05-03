@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sos_application/main.dart';
 
 class RegisterNumber extends StatefulWidget {
@@ -63,6 +64,10 @@ class _RegisterNumberState extends State<RegisterNumber> {
                           left: queryData.size.width * 4 / 100),
                       child: Container(
                         child: TextField(
+                          //keyboardType and inputFormatters for numbers only
+                          keyboardType: TextInputType.number,
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly],
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0)),
