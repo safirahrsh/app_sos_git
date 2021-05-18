@@ -74,7 +74,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ))),
               onPressed: () {
                 //Setup Number button will navigate to register number screen
-                Navigator.push(context,
+                Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => RegisterNumber()));
               },
               child: Text("Setup Number"),

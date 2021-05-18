@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sos_application/OnBoarding.dart';
 import 'dart:async';
+
+import 'package:sos_application/main.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -10,16 +13,29 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  Future isFirstInstall() async{
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      bool seen = preferences.getBool('seen')?? false;
+        if(seen){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AppNavBar()));
+        }
+        else{
+          await preferences.setBool('seen', true);
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
+        }
+    }
+
+    @override
+    void initState() { 
+      super.initState();
+      Timer(Duration(seconds: 6), isFirstInstall);
+    }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
     
-    //Automatically navigates to boarding screen within 5 secs. Point of no return.
-    Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
-    });
-
     return Scaffold(
       body: SafeArea(
         child: Container(
