@@ -55,7 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
               bodyTextStyle: TextStyle(color: Colors.grey[700], fontSize: 16))),
       PageViewModel(
-          title: "Integrated Servies",
+          title: "Integrated Services",
           body: "Dial local emergency services\nfrom one button",
           image: Image.asset('assets/img/cs_isometric.png'),
           decoration: PageDecoration(
