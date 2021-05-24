@@ -60,7 +60,7 @@ class _FaqPageState extends State<FaqPage> {
                       child: ElevatedButton(
                           onPressed: () {},
                           child: Text(
-                            'Help 1',
+                            'Panduan Penggunaan Aplikasi',
                             style: TextStyle(color: Colors.red),
                           ),
                           style: ButtonStyle(
@@ -87,7 +87,7 @@ class _FaqPageState extends State<FaqPage> {
                       child: ElevatedButton(
                           onPressed: () {},
                           child: Text(
-                            'Help 2',
+                            'Menambah kontak darurat',
                             style: TextStyle(color: Colors.red),
                           ),
                           style: ButtonStyle(
@@ -156,15 +156,16 @@ class _FaqPageState extends State<FaqPage> {
                 Card(
                   child: ExpansionTile(
                     title: Text(
-                      'Question 1',
+                      'Apakah saya bisa mengganti nomor telepon?',
                       style: TextStyle(fontSize: 15),
                     ),
                     children: [
                       Container(
+                        padding: EdgeInsets.only(left: queryData.size.width * 4 / 100),
                         height: queryData.size.height * 8 / 100,
                         child: Align(
                           child: Text(
-                            'Answer 1',
+                            'Tidak, nomor yang telah teregistrasi tidak dapat diubah.',
                             style: TextStyle(fontSize: 15),
                           ),
                           alignment: Alignment.center,
@@ -176,15 +177,16 @@ class _FaqPageState extends State<FaqPage> {
                 Card(
                   child: ExpansionTile(
                     title: Text(
-                      'Question 2',
+                      'Apakah pesan darurat dapat diubah?',
                       style: TextStyle(fontSize: 15),
                     ),
                     children: [
                       Container(
+                        padding: EdgeInsets.only(left: queryData.size.width * 4 / 100),
                         height: queryData.size.height * 8 / 100,
                         child: Align(
                           child: Text(
-                            'Answer 2',
+                            'Untuk menghindari penyalahgunaan aplikasi, pesan darurat tidak dapat diubah.',
                             style: TextStyle(fontSize: 15),
                           ),
                           alignment: Alignment.center,
@@ -196,15 +198,16 @@ class _FaqPageState extends State<FaqPage> {
                 Card(
                   child: ExpansionTile(
                     title: Text(
-                      'Question 3',
+                      'Apakah saya dapat menambahkan kontak?',
                       style: TextStyle(fontSize: 15),
                     ),
                     children: [
                       Container(
+                        padding: EdgeInsets.only(left: queryData.size.width * 4 / 100),
                         height: queryData.size.height * 8 / 100,
                         child: Align(
                           child: Text(
-                            'Answer 3',
+                            'Anda dapat menambahkan kontak, dengan jumlah maksimal adalah 5 (lima) kontak.',
                             style: TextStyle(fontSize: 15),
                           ),
                           alignment: Alignment.center,
