@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sos_application/showAlertDialog.dart';
+import 'package:telephony/telephony.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +12,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final Telephony telephony = Telephony.instance;
     MediaQueryData queryData = MediaQuery.of(context);
     return new Scaffold(
         body: SafeArea(
@@ -32,7 +36,20 @@ class _HomeState extends State<Home> {
             width: queryData.size.width * 50 / 100,
             height: queryData.size.height * 25 / 100,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showAlertDialog(
+                          context,
+                          "Send SOS Message",
+                          "Are you sure you want to call send SOS messages?",
+                          "Send SOS",
+                          "Cancel",
+                          (){
+                            telephony.sendSms(
+                              to: "085697003008",
+                              message: "SEND SOS HERE HELP");
+                          }
+                        );
+              },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                   shape:
@@ -75,7 +92,19 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showAlertDialog(
+                          context,
+                          "Call Police",
+                          "Are you sure you want to call the police?",
+                          "Call Police",
+                          "Cancel",
+                          (){
+                            callPolice();
+                          }
+                        );
+                        //launch("tel:+6285697003008"); //launch a call
+                      },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,7 +145,18 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showAlertDialog(
+                          context,
+                          "Call Ambulance",
+                          "Are you sure you want to call the ambulance?",
+                          "Call Ambulance",
+                          "Cancel",
+                          (){
+                            callAmbulance()();
+                          }
+                        );
+                      },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -170,7 +210,18 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showAlertDialog(
+                          context,
+                          "Call Damkar",
+                          "Are you sure you want to call Damkar?",
+                          "Call Damkar",
+                          "Cancel",
+                          (){
+                            callDamkar()();
+                          }
+                        );
+                      },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,4 +308,19 @@ class _HomeState extends State<Home> {
       ),
     ));
   }
+  callPolice() async {
+    const policeNumber = '085697003008';  //110
+    await FlutterPhoneDirectCaller.callNumber(policeNumber);
+  }
+
+  callAmbulance() async{
+    const ambulanceNumber = '085697003008'; //118 or 119
+    await FlutterPhoneDirectCaller.callNumber(ambulanceNumber);
+}
+  
+  callDamkar() async{
+    const damkarNumber = '085697003008';  //113  
+    await FlutterPhoneDirectCaller.callNumber(damkarNumber);
+  }
+  
 }
