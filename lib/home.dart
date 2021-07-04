@@ -38,17 +38,14 @@ class _HomeState extends State<Home> {
             child: TextButton(
               onPressed: () {
                 showAlertDialog(
-                          context,
-                          "Send SOS Message",
-                          "Are you sure you want to call send SOS messages?",
-                          "Send SOS",
-                          "Cancel",
-                          (){
-                            telephony.sendSms(
-                              to: "085697003008",
-                              message: "SEND SOS HERE HELP");
-                          }
-                        );
+                    context,
+                    "Send SOS Message",
+                    "Are you sure you want to call send SOS messages?",
+                    "Cancel",
+                    "Send SOS", () {
+                  telephony.sendSms(
+                      to: "085697003008", message: "SEND SOS HERE HELP");
+                });
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
@@ -94,15 +91,13 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {
                         showAlertDialog(
-                          context,
-                          "Call Police",
-                          "Are you sure you want to call the police?",
-                          "Call Police",
-                          "Cancel",
-                          (){
-                            callPolice();
-                          }
-                        );
+                            context,
+                            "Call Police",
+                            "Are you sure you want to call the police?",
+                            "Cancel",
+                            "Call Police", () {
+                          callPolice();
+                        });
                         //launch("tel:+6285697003008"); //launch a call
                       },
                       child: Column(
@@ -147,15 +142,13 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {
                         showAlertDialog(
-                          context,
-                          "Call Ambulance",
-                          "Are you sure you want to call the ambulance?",
-                          "Call Ambulance",
-                          "Cancel",
-                          (){
-                            callAmbulance()();
-                          }
-                        );
+                            context,
+                            "Call Ambulance",
+                            "Are you sure you want to call the ambulance?",
+                            "Cancel",
+                            "Call Ambulance", () {
+                          callAmbulance()();
+                        });
                       },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,15 +205,13 @@ class _HomeState extends State<Home> {
                   child: ElevatedButton(
                       onPressed: () {
                         showAlertDialog(
-                          context,
-                          "Call Damkar",
-                          "Are you sure you want to call Damkar?",
-                          "Call Damkar",
-                          "Cancel",
-                          (){
-                            callDamkar()();
-                          }
-                        );
+                            context,
+                            "Call Damkar",
+                            "Are you sure you want to call Damkar?",
+                            "Cancel",
+                            "Call Damkar", () {
+                          callDamkar()();
+                        });
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -284,10 +275,12 @@ class _HomeState extends State<Home> {
                             ],
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              FaIcon(FontAwesomeIcons.userCheck, color: Colors.red)]),
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                FaIcon(FontAwesomeIcons.userCheck,
+                                    color: Colors.red)
+                              ]),
                         ],
                       ),
                       style: ButtonStyle(
@@ -308,19 +301,19 @@ class _HomeState extends State<Home> {
       ),
     ));
   }
+
   callPolice() async {
-    const policeNumber = '085697003008';  //110
+    const policeNumber = '085697003008'; //110
     await FlutterPhoneDirectCaller.callNumber(policeNumber);
   }
 
-  callAmbulance() async{
+  callAmbulance() async {
     const ambulanceNumber = '085697003008'; //118 or 119
     await FlutterPhoneDirectCaller.callNumber(ambulanceNumber);
-}
-  
-  callDamkar() async{
-    const damkarNumber = '085697003008';  //113  
+  }
+
+  callDamkar() async {
+    const damkarNumber = '085697003008'; //113
     await FlutterPhoneDirectCaller.callNumber(damkarNumber);
   }
-  
 }
