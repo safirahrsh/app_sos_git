@@ -40,11 +40,11 @@ class _HomeState extends State<Home> {
                 showAlertDialog(
                     context,
                     "Send SOS Message",
-                    "Are you sure you want to call send SOS messages?",
+                    "Are you sure you want to send SOS messages?",
                     "Cancel",
                     "Send SOS", () {
                   telephony.sendSms(
-                      to: "085697003008", message: "SEND SOS HERE HELP");
+                      to: "085697003008", message: "SOS! Saya butuh bantuan!");
                 });
               },
               style: ButtonStyle(

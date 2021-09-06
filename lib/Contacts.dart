@@ -108,7 +108,7 @@ class _ContactsState extends State<Contacts> {
                       borderRadius: BorderRadius.circular(16.0),
                     ))),
                 child: Text(
-                  'Add Contacts',
+                  'Import contacts',
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
