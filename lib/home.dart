@@ -13,6 +13,27 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final Telephony telephony = Telephony.instance;
+    final SmsSendStatusListener listener = (SendStatus status){
+      status == SendStatus.SENT ? 
+        showInfoDialog(
+          context, 
+          "Success", 
+          "Successfully sent an emergency message!", 
+          "OK") :
+          showInfoDialog(
+          context, 
+          "Failed", 
+          "Failed to send an emergency message.", 
+          "OK");
+    };
+
+    sendSMS() async {
+    telephony.sendSms(
+    to: "085697003008", 
+    message: "SOS! Saya butuh bantuan!",
+    statusListener: listener);
+  }
+    
     MediaQueryData queryData = MediaQuery.of(context);
     return new Scaffold(
         body: SafeArea(
@@ -43,8 +64,7 @@ class _HomeState extends State<Home> {
                     "Are you sure you want to send SOS messages?",
                     "Cancel",
                     "Send SOS", () {
-                  telephony.sendSms(
-                      to: "085697003008", message: "SOS! Saya butuh bantuan!");
+                  sendSMS();
                 });
               },
               style: ButtonStyle(
@@ -302,6 +322,7 @@ class _HomeState extends State<Home> {
     ));
   }
 
+
   callPolice() async {
     const policeNumber = '085697003008'; //110
     await FlutterPhoneDirectCaller.callNumber(policeNumber);
@@ -316,4 +337,5 @@ class _HomeState extends State<Home> {
     const damkarNumber = '085697003008'; //113
     await FlutterPhoneDirectCaller.callNumber(damkarNumber);
   }
+  
 }
