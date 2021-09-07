@@ -62,7 +62,9 @@ class _ContactsState extends State<Contacts> {
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ))),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      print("initiate import from contacts");
+                                    },
                                   ),
                                 ),
                               ),
@@ -87,7 +89,9 @@ class _ContactsState extends State<Contacts> {
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ))),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      print("initiate add contacts manually");
+                                    },
                                   ),
                                 ),
                               )
@@ -104,7 +108,7 @@ class _ContactsState extends State<Contacts> {
                       borderRadius: BorderRadius.circular(16.0),
                     ))),
                 child: Text(
-                  'Add Contacts',
+                  'Import contacts',
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),

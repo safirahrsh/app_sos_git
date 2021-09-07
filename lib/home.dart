@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sos_application/showAlertDialog.dart';
+import 'package:telephony/telephony.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -8,6 +12,28 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final Telephony telephony = Telephony.instance;
+    final SmsSendStatusListener listener = (SendStatus status){
+      status == SendStatus.SENT ? 
+        showInfoDialog(
+          context, 
+          "Success", 
+          "Successfully sent an emergency message!", 
+          "OK") :
+          showInfoDialog(
+          context, 
+          "Failed", 
+          "Failed to send an emergency message.", 
+          "OK");
+    };
+
+    sendSMS() async {
+    telephony.sendSms(
+    to: "085697003008", 
+    message: "SOS! Saya butuh bantuan!",
+    statusListener: listener);
+  }
+    
     MediaQueryData queryData = MediaQuery.of(context);
     return new Scaffold(
         body: SafeArea(
@@ -31,7 +57,16 @@ class _HomeState extends State<Home> {
             width: queryData.size.width * 50 / 100,
             height: queryData.size.height * 25 / 100,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showAlertDialog(
+                    context,
+                    "Send SOS Message",
+                    "Are you sure you want to send SOS messages?",
+                    "Cancel",
+                    "Send SOS", () {
+                  sendSMS();
+                });
+              },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                   shape:
@@ -74,10 +109,41 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Polisi',
-                        style: TextStyle(color: Colors.red),
+                      onPressed: () {
+                        showAlertDialog(
+                            context,
+                            "Call Police",
+                            "Are you sure you want to call the police?",
+                            "Cancel",
+                            "Call Police", () {
+                          callPolice();
+                        });
+                        //launch("tel:+6285697003008"); //launch a call
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Polisi',
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Image.asset("assets/img/icon_polri.png",
+                                    height: 28)
+                              ]),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -94,10 +160,41 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Ambulans',
-                        style: TextStyle(color: Colors.red),
+                      onPressed: () {
+                        showAlertDialog(
+                            context,
+                            "Call Ambulance",
+                            "Are you sure you want to call the ambulance?",
+                            "Cancel",
+                            "Call Ambulance", () {
+                          callAmbulance()();
+                        });
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ambulans',
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                FaIcon(FontAwesomeIcons.ambulance,
+                                    color: Colors.red)
+                              ]),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -126,12 +223,43 @@ class _HomeState extends State<Home> {
                   width: queryData.size.width * 40 / 100,
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Damkar',
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
+                      onPressed: () {
+                        showAlertDialog(
+                            context,
+                            "Call Damkar",
+                            "Are you sure you want to call Damkar?",
+                            "Cancel",
+                            "Call Damkar", () {
+                          callDamkar()();
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Damkar',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              FaIcon(FontAwesomeIcons.fireExtinguisher,
+                                  color: Colors.red),
+                            ],
+                          ),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -149,9 +277,31 @@ class _HomeState extends State<Home> {
                   height: queryData.size.height * 20 / 100,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        'Emergency Contact',
-                        style: TextStyle(color: Colors.red),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                'Emergency\nContact',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: Colors.red),
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.red,
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                FaIcon(FontAwesomeIcons.userCheck,
+                                    color: Colors.red)
+                              ]),
+                        ],
                       ),
                       style: ButtonStyle(
                         shape:
@@ -171,4 +321,21 @@ class _HomeState extends State<Home> {
       ),
     ));
   }
+
+
+  callPolice() async {
+    const policeNumber = '085697003008'; //110
+    await FlutterPhoneDirectCaller.callNumber(policeNumber);
+  }
+
+  callAmbulance() async {
+    const ambulanceNumber = '085697003008'; //118 or 119
+    await FlutterPhoneDirectCaller.callNumber(ambulanceNumber);
+  }
+
+  callDamkar() async {
+    const damkarNumber = '085697003008'; //113
+    await FlutterPhoneDirectCaller.callNumber(damkarNumber);
+  }
+  
 }

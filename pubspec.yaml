@@ -23,17 +23,25 @@ environment:
 dependencies:
   dots_indicator: ^2.0.0
   introduction_screen: ^2.1.0
+  font_awesome_flutter: ^9.0.0
+  flutter_launcher_icons: ^0.9.0
+  shared_preferences: ^2.0.5
+  # url_launcher: ^6.0.6
+  telephony: ^0.1.4
+  flutter_phone_direct_caller: ^2.0.0
+  permission_handler: ^8.1.2
+  
+flutter_icons:
+  image_path: "assets/img/Icon.png"
+  android: true
+  ios: true
 
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
-
-  # Store & load data
-  shared_preferences: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +64,7 @@ flutter:
      - assets/img/cs_isometric.png
      - assets/img/sendmsg_isometric.png
      - assets/img/userstatus_isometric.png
+     - assets/img/icon_polri.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

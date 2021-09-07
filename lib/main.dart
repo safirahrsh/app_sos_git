@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SOS',
       home: SplashScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -40,7 +41,7 @@ class _AppNavBarState extends State<AppNavBar> {
         type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.call),
             label: 'SOS',
             // backgroundColor: Colors.white
           ),
@@ -49,7 +50,7 @@ class _AppNavBarState extends State<AppNavBar> {
               label: 'Contacts',
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.contact_support),
               label: 'FAQ',
               backgroundColor: Colors.white),
         ],
