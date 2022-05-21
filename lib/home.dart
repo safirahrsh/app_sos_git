@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
 
     sendSMS() async {
     telephony.sendSms(
-    to: "085697003008", 
+    to: "081234567890", 
     message: "SOS! Saya butuh bantuan!",
     statusListener: listener);
   }
@@ -324,17 +324,17 @@ class _HomeState extends State<Home> {
 
 
   callPolice() async {
-    const policeNumber = '085697003008'; //110
+    const policeNumber = '110'; //110
     await FlutterPhoneDirectCaller.callNumber(policeNumber);
   }
 
   callAmbulance() async {
-    const ambulanceNumber = '085697003008'; //118 or 119
+    const ambulanceNumber = '118'; //118 or 119
     await FlutterPhoneDirectCaller.callNumber(ambulanceNumber);
   }
 
   callDamkar() async {
-    const damkarNumber = '085697003008'; //113
+    const damkarNumber = '113'; //113
     await FlutterPhoneDirectCaller.callNumber(damkarNumber);
   }
   
